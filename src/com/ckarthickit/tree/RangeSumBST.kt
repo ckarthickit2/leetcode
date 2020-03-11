@@ -28,12 +28,6 @@ package com.ckarthickit.tree
  *   1   6
  */
 
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-}
-
 fun rangeSumBST(root: TreeNode?, L: Int, R: Int): Int {
     return inOrderRangeSum(root, L, R)
 }

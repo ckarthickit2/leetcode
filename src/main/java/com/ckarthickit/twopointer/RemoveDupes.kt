@@ -38,7 +38,11 @@ private fun removeDuplicates(nums: IntArray): Int {
     var nexPotentialNonDupIndex = 1 //nexPotentialNonDupIndex is pointer 1
     for (i in 1 until nums.size) { //i is pointer 2
 
-        //Since the array is sorted, We need to match the next non-duplicate value Only with the previous value.
+        //Any number to the left of nexPotentialNonDupIndex is not duplicate.
+        //Since the array is sorted, We need to compare the current-running value only with the value previous to the
+        // nexPotentialNonDupIndex.
+        // If they are equal , they are dupes so let's move on next value (i) to check if it is not a duplicate
+        // If they are not equal , then we find a non-duplicate number. Put it in the `nexPotentialNonDupIndex`
         if (nums[i] != nums[nexPotentialNonDupIndex - 1]) {
             //Found another Non-Duplicate number
             swap(nums, i, nexPotentialNonDupIndex)
